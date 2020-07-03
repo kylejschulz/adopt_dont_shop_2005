@@ -2,6 +2,8 @@
 
 <% @shelters.each do |shelter| %>
   <p><%= shelter.name %></p>
+  <%= link_to "Edit #{shelter.name}", "/shelters/#{shelter.id}/edit" %>
+  <%= button_to "Delete #{shelter.name}", "/shelters/#{shelter.id}", method: :delete %>
 <% end %>
 
-<%= link_to 'New Artist', '/shelters/new' %>
+<%= link_to "New Shelter", "/shelters/new" %>
