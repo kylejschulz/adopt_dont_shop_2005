@@ -1,12 +1,12 @@
-#pets index spec
+#pets show spec
 
 require 'rails_helper'
 
 RSpec.describe 'As a visitor' do
-  describe 'when I visit the pets index page' do
-    it 'shows a list of all pets and their attributes' do
+  describe 'I visit a pet show page' do
+    it 'shows the attributes of that pet' do
 
-      shelter_1 = Shelter.create!(name: "Denver Animal Shelter",
+      shelter_1 =  Shelter.create!(name: "Denver Animal Shelter",
                         address: "3301 Navajo Street",
                         city: "Denver",
                         state: "CO",
@@ -16,11 +16,13 @@ RSpec.describe 'As a visitor' do
                         city: "Monterey",
                         state: "CA",
                         zip: 35872)
+
       pet_1 =  Pet.create!(name: "Winnie",
                         approximate_age: 3,
                         sex: "Female",
                         image: "https://imgur.com/r/puppies/cYqJGNo",
                         adoption_status: "Available",
+                        description: "Simply the best",
                         shelter_id: shelter_1.id)
       pet_2 =  Pet.create!(name: "Sir Maximus",
                         approximate_age: 1,
@@ -29,14 +31,15 @@ RSpec.describe 'As a visitor' do
                         adoption_status: "Available",
                         shelter_id: shelter_2.id)
 
-      visit '/pets'
+      visit "pets/#{pet_1.id}"
 
-      expect(page).to have_content (pet_1.name)
-      expect(page).to have_content (shelter_1.name)
-      expect(page).to have_content (pet_1.sex)
-      expect(page).to have_content (pet_2.name)
-      expect(page).to have_content (shelter_2.name)
-      expect(page).to have_content (pet_2.sex)
+      expect(page).to have_content(pet_1.name)
+      expect(page).to have_content(pet_1.description)
+      expect(page).to have_content(pet_1.adoption_status)
+      expect(page).to have_content(pet_1.sex)
+      expect(page).to have_content(pet_1.approximate_age)
+      expect(page).to_not have_content(pet_2.name)
+      expect(page).to_not have_content(pet_2.approximate_age)
     end
   end
 end
