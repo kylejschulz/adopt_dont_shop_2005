@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'As a visitor' do
-  describe 'When I click the EDIT button by a shelter on the index page' do
+  describe 'When I click the EDIT button by a shelter on the show page' do
     describe 'I am redirected to a form' do
     it 'then I can edit the details of the shelter' do
 
@@ -16,10 +16,10 @@ RSpec.describe 'As a visitor' do
                         state: "CA",
                         zip: 35872)
 
-      visit '/shelters'
+      visit "/shelters/#{shelter_1.id}"
       expect(page).to have_content("Denver Animal Shelter")
 
-      click_on 'Edit Denver Animal Shelter'
+      click_on 'Update Shelter'
 
       expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
 
@@ -37,7 +37,7 @@ RSpec.describe 'As a visitor' do
       click_on 'Update Shelter'
 
       expect(current_path).to eq("/shelters/#{shelter_1.id}")
-      expect(page).to_not have_content("Denver Animal Shelter")
+      expect(page).to_not have_content("Denver Animal Shelter") 
       expect(page).to_not have_content("3301 Navajo Street")
       expect(page).to have_content(name)
       expect(page).to have_content(address)
