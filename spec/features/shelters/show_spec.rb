@@ -1,3 +1,4 @@
+#shelters show spec 
 require 'rails_helper'
 
 RSpec.describe 'As a visitor' do
@@ -23,4 +24,4 @@ RSpec.describe 'As a visitor' do
       expect(page).to_not have_content(shelter_2.name)
     end
   end
-end 
+end
