@@ -2,6 +2,7 @@
 
 <h1>Create New Pet</h1>
 
+<section class="form">
 <%= form_tag "/shelters/:id/pets" do %>
   <%= label_tag :image %>
   <%= text_field_tag :image %>
@@ -17,3 +18,4 @@
 
   <%= submit_tag "Create Pet" %>
 <% end %>'
+</section>

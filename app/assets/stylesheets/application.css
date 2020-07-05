@@ -17,8 +17,22 @@
  h1{
    font-size:30px;
    font-weight: bold;
-   font-family: Helvetica;
+   font-family: Helvetica, sans_serif;
    color: #76d0ad;
    text-transform: uppercase;
    text-align: center;
+ }
+
+ p{
+   font-family: Helvetica, sans_serif;
+ }
+
+ h3{
+   font-family: Helvetica, sans-serif;
+ }
+
+ #class{
+   font-family: Helvetica, sans-serif;
+   background-color: black;
+   color: white;
  }

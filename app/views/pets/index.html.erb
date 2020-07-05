@@ -4,6 +4,7 @@
 
 <% @pets.each do |pet| %>
   <h3><%= link_to("#{pet.name}", "/pets/#{pet.id}") %></h3>
+  <img src="<%= pet.image %>" width='30%' alt="<%= pet.name %>"> <br>
   <p>Age: <%= pet.approximate_age %><br>
   Sex: <%= pet.sex %><br>
   <%= link_to("#{pet.shelter.name}","shelters/#{pet.shelter_id}") %></p>
