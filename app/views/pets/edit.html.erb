@@ -1,6 +1,6 @@
 <p><%= link_to("List of Shelters", "/shelters") %></p>
 
-<h3>Update <%= @pet.name %></h3>
+<h1>Update <%= @pet.name %></h1>
 
 <%= form_tag "/pets/#{@pet.id}", method: :patch do %>
   <%= label_tag :image %>

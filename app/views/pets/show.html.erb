@@ -1,13 +1,13 @@
-<p><%= link_to("List of Shelters", "/shelters") %></p>
+<p><%= button_to("List of Shelters", "/shelters") %></p>
 
-<h3>This is <%= @pet.name %>!</h3>
+<h1>This is <%= @pet.name %>!</h1>
 
-  <p><blockquote class="imgur-embed-pub" lang="en" data-id="cYqJGNo"><a href="//imgur.com/cYqJGNos"></a></blockquote><script async src="//s.imgur.com/min/embed.js" width= 123px charset="utf-8"></script></p>
-<p>Description: <%= @pet.description %></p>
-<p>Age: <%= @pet.approximate_age %></p>
-<p>Gender: <%= @pet.sex %></p>
-<p>Adoptable? <%= @pet.adoption_status %></p>
+<p>Link to Image: <%= @pet.image %><br>
+  Description: <%= @pet.description %><br>
+Age: <%= @pet.approximate_age %><br>
+Gender: <%= @pet.sex %><br>
+Adoptable? <%= @pet.adoption_status %></p>
 
-<%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %>
+<%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %><br>
 
 <%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>
