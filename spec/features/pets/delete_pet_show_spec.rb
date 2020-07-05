@@ -1,4 +1,4 @@
-# pet delete spec
+# pet delete from show spec
 
 require 'rails_helper'
 
