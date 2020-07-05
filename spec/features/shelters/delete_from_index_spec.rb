@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'As a visitor' do
-  describe 'When I click on the delete button by the artist on the index page' do
-    it 'then the artist it deletes, and the index page is refreshed' do
+  describe 'When I click on the delete button by the shelter on the index page' do
+    it 'then the shelter is deleted, and the index page is refreshed' do
 
       shelter_1 =  Shelter.create!(name: "Denver Animal Shelter",
                         address: "3301 Navajo Street",
@@ -25,4 +25,3 @@ RSpec.describe 'As a visitor' do
     end
   end
 end
- 
