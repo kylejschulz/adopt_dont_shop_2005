@@ -7,6 +7,8 @@
   <p>Sex: <%= pet.sex %></p>
   <p><%= pet.description %> </p>
   <p><%= pet.adoption_status %> </p>
+
+  <%= link_to "Update #{pet.name}", "/pets/#{pet.id}/edit" %>
 <% end %>
 
 <%= link_to "Create Pet", "/shelters/#{@shelter_identifier.id}/pets/new", {:shelterid => @shelter_identifier.id} %>
