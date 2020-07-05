@@ -16,7 +16,7 @@ RSpec.describe 'When I visit the pet show page' do
                       state: "CA",
                       zip: 35872)
 
-    pet_1 =  Pet.create!(name: "Winnie",
+    pet_1 =  Pet.create!(name: "Tom",
                       approximate_age: 3,
                       sex: "Female",
                       image: "https://imgur.com/r/puppies/cYqJGNo",
@@ -32,11 +32,11 @@ RSpec.describe 'When I visit the pet show page' do
 
     visit "/pets/#{pet_1.id}"
 
-    expect(page).to have_content('Winnie')
+    expect(page).to have_content('Tom')
 
     click_link "Delete Pet"
 
     expect(current_path).to eq('/pets')
-    expect(page).to_not have_content('Winnie')
+    expect(page).to_not have_content('Tom')
   end
 end

@@ -18,7 +18,7 @@ RSpec.describe 'As a visitor' do
                           state: "CA",
                           zip: 35872)
 
-        pet_1 =  Pet.create!(name: "Winnie",
+        pet_1 =  Pet.create!(name: "Tom",
                           approximate_age: 3,
                           sex: "Female",
                           image: "https://imgur.com/r/puppies/cYqJGNo",
@@ -48,7 +48,7 @@ RSpec.describe 'As a visitor' do
 
         expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
         expect(page).to have_content("Birdie")
-        expect(page).to have_content("Winnie")
+        expect(page).to have_content("Tom")
         expect(page).to_not have_content("Sir Maximums")
     end
   end
