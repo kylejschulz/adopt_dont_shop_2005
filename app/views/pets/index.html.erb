@@ -1,12 +1,15 @@
-<h1>Pets</h1>
+<p><%= link_to("List of Shelters", "/shelters") %></p>
+
+<h3>Pets</h3>
 
 <% @pets.each do |pet| %>
   <p>Image: <img src="<%= pet.image %>" alt="<%= pet.name %>"> </p>
-  <h3><%= pet.name %> </h3>
+  <h3><%= link_to("#{pet.name}", "/pets/#{pet.id}") %></h3>
   <p>Age: <%= pet.approximate_age %></p>
   <p>Sex: <%= pet.sex %></p>
   <p><%= link_to("#{pet.shelter.name}","shelters/#{pet.shelter_id}") %></p>
 
   <%= link_to "Update #{pet.name}", "/pets/#{pet.id}/edit" %>
+  <br>
   <%= link_to "Delete #{pet.name}", "/pets/#{pet.id}", method: :delete %>
 <% end %>

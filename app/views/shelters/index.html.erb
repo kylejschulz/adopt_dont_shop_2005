@@ -1,10 +1,13 @@
-<h1>All Shelters</h1>
+<p><%= link_to("List of Shelters", "/shelters") %></p>
+
+<h3>All Shelters</h3>
 
 <% @shelters.each do |shelter| %>
-  <p><%= shelter.name %></p>
   <p><%= link_to("#{shelter.name}", "/shelters/#{shelter.id}") %></p>
+  <br>
   <%= link_to "Edit #{shelter.name}", "/shelters/#{shelter.id}/edit" %>
+  <br>
   <%= button_to "Delete #{shelter.name}", "/shelters/#{shelter.id}", method: :delete %>
 <% end %>
-
+<br>
 <%= link_to "New Shelter", "/shelters/new" %>

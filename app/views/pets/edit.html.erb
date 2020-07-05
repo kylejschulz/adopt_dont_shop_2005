@@ -1,16 +1,22 @@
-<h1>Update <%= @pet.name %></h1>
+<p><%= link_to("List of Shelters", "/shelters") %></p>
+
+<h3>Update <%= @pet.name %></h3>
 
 <%= form_tag "/pets/#{@pet.id}", method: :patch do %>
   <%= label_tag :image %>
   <%= text_field_tag :image %>
+  <br>
   <%= label_tag :name %>
   <%= text_field_tag :name %>
+  <br>
   <%= label_tag :description %>
   <%= text_field_tag :description %>
+  <br>
   <%= label_tag :approximate_age %>
   <%= text_field_tag :approximate_age %>
+  <br>
   <%= label_tag "Sex" %>
   <%= select_tag :sex, options_for_select([["Male", "Male"],["Female", "Female"]]) %>
-
+  <br>
   <%= submit_tag "Update Pet" %>
 <% end %>'

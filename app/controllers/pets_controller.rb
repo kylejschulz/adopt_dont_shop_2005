@@ -7,6 +7,7 @@ class PetsController < ApplicationController
   def pet_list
     @shelter_identifier = Shelter.find(params[:id])
     @shelter_pets = @shelter_identifier.pets
+    @count = @shelter_pets.count
   end
 
   def show
