@@ -17,4 +17,4 @@
   <br>
 <% end %>
   <br>
-<%= button_to "Create Pet", "/shelters/#{@shelter_identifier.id}/pets/new", {:shelterid => @shelter_identifier.id} %>
+<%= link_to "Create Pet", "/shelters/#{@shelter_identifier.id}/pets/new", {:shelterid => @shelter_identifier.id} %>
