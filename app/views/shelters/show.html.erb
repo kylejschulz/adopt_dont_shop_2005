@@ -2,10 +2,10 @@
 
 <h1><%= @shelter.name %></h1>
 
-<p><%= @shelter.address %><br>
-<%= @shelter.city %><br>
-<%= @shelter.state %><br>
-<%= @shelter.zip %><br>
+<p>Address: <%= @shelter.address %><br>
+City: <%= @shelter.city %><br>
+State: <%= @shelter.state %><br>
+Zip: <%= @shelter.zip %><br>
 <%= link_to "See the pets at #{@shelter.name}!!", "/shelters/#{@shelter.id}/pets" %></p>
 <%= link_to "Update Shelter", "/shelters/#{@shelter.id}/edit" %>
 <br>

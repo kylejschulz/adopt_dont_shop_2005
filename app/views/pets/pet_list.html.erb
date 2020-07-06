@@ -4,10 +4,9 @@
 <p>Pets Available at <%= link_to("#{@shelter_identifier.name}","shelters/#{@shelter_identifier.id}") %>: <%= "#{@count}" %></p>
 <% @shelter_pets.each do |pet| %>
   <h3><%= link_to("#{pet.name}", "/pets/#{pet.id}") %></h3>
-  <p>Link to Image: <%= pet.image %><br>
+  <p><img src="<%= pet.image %>" width='30%' alt="<%= pet.name %>"> <br>
     Age: <%= pet.approximate_age %> <br>
   Sex: <%= pet.sex %> <br>
-  <%= pet.image %><br>
   Description: <%= pet.description %> <br>
   Adoptable? <%= pet.adoption_status %> </p>
 
