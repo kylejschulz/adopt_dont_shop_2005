@@ -6,7 +6,7 @@ RSpec.describe 'As a visitor' do
   describe 'When I click on the delete button by the shelter on the show page' do
     it 'then the shelter is deleted, and I am redirected to the shelter index page' do
 
-      shelter_1 =  Shelter.create!(name: "Denver Animal Shelter",
+      shelter_1 =  Shelter.create!(name: "Aurora Animal Shelter",
                         address: "3301 Navajo Street",
                         city: "Denver",
                         state: "CO",

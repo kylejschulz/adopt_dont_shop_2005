@@ -18,7 +18,7 @@ RSpec.describe 'As a visitor' do
                           state: "CA",
                           zip: 35872)
 
-        pet_1 =  Pet.create!(name: "Winnie",
+        pet_1 =  Pet.create!(name: "Tom",
                           approximate_age: 3,
                           sex: "Female",
                           image: "https://imgur.com/r/puppies/cYqJGNo",
@@ -37,7 +37,7 @@ RSpec.describe 'As a visitor' do
         expect(page).to have_content(pet_1.name)
         expect(page).to have_content(pet_2.name)
 
-        click_on 'Update Winnie'
+        click_on 'Update Tom'
         expect(current_path).to eq("/pets/#{pet_1.id}/edit")
         fill_in :name, with: "Winnie the Poo"
         select "Male"
@@ -46,7 +46,7 @@ RSpec.describe 'As a visitor' do
         expect(current_path).to eq("/pets/#{pet_1.id}")
         expect(page).to have_content("Winnie the Poo")
         expect(page).to have_content("Male")
-        expect(page).to_not have_content("Female")
+        expect(page).to_not have_content("Tom")
       end
     end
   end
@@ -65,7 +65,7 @@ RSpec.describe 'As a visitor' do
                           state: "CA",
                           zip: 35872)
 
-        pet_1 =  Pet.create!(name: "Winnie",
+        pet_1 =  Pet.create!(name: "Tom",
                           approximate_age: 3,
                           sex: "Female",
                           image: "https://imgur.com/r/puppies/cYqJGNo",
@@ -84,7 +84,7 @@ RSpec.describe 'As a visitor' do
         expect(page).to have_content(pet_1.name)
         expect(page).to_not have_content(pet_2.name)
 
-        click_on 'Update Winnie'
+        click_on 'Update Tom'
         expect(current_path).to eq("/pets/#{pet_1.id}/edit")
         fill_in :name, with: "Winnie the Poo"
         select "Male"

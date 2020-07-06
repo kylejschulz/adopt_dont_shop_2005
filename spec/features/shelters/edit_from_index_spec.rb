@@ -7,7 +7,7 @@ RSpec.describe 'As a visitor' do
     describe 'I am redirected to a form' do
     it 'then I can edit the details of the shelter' do
 
-      shelter_1 =  Shelter.create!(name: "Denver Animal Shelter",
+      shelter_1 =  Shelter.create!(name: "Aurora Animal Shelter",
                         address: "3301 Navajo Street",
                         city: "Denver",
                         state: "CO",
@@ -19,9 +19,9 @@ RSpec.describe 'As a visitor' do
                         zip: 35872)
 
       visit "/shelters/"
-      expect(page).to have_content("Denver Animal Shelter")
+      expect(page).to have_content("Aurora Animal Shelter")
 
-      click_on 'Edit Denver Animal Shelter'
+      click_on 'Edit Aurora Animal Shelter'
 
       expect(current_path).to eq("/shelters/#{shelter_1.id}/edit")
 
@@ -39,7 +39,7 @@ RSpec.describe 'As a visitor' do
       click_on 'Update Shelter'
 
       expect(current_path).to eq("/shelters/#{shelter_1.id}")
-      expect(page).to_not have_content("Denver Animal Shelter")
+      expect(page).to_not have_content("Aurora Animal Shelter")
       expect(page).to_not have_content("3301 Navajo Street")
       expect(page).to have_content(name)
       expect(page).to have_content(address)

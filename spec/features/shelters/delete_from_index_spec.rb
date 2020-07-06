@@ -9,7 +9,7 @@ RSpec.describe 'As a visitor' do
                         city: "Denver",
                         state: "CO",
                         zip: 80021)
-      shelter_2 = Shelter.create!(name: "Monterey Animal Shelter",
+      shelter_2 = Shelter.create!(name: "Monterrey Animal Shelter",
                         address: "2520 Crimson Road",
                         city: "Monterey",
                         state: "CA",
@@ -17,7 +17,7 @@ RSpec.describe 'As a visitor' do
 
       visit '/shelters'
       expect(page).to have_content(shelter_2.name)
-      click_on 'Delete Monterey Animal Shelter'
+      click_on 'Delete Monterrey Animal Shelter'
 
       expect(current_path).to eq('/shelters')
       expect(page).to_not have_content(shelter_2.name)
